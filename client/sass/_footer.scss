@@ -1,0 +1,29 @@
+.footer {
+  background-color: $color-grey-light-2;
+  grid-row: 3/4;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__box {
+      border-radius: 3px;
+
+      padding: 1rem 2rem;
+      background-color: $color-grey-light-1;
+
+      &--text {
+        font-size: 1.5rem;
+        font-weight: 200;
+      }
+    }
+  }
+}

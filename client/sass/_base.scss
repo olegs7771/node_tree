@@ -1,0 +1,31 @@
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-sarif;
+$font-display: 'Josefin sans', sans-sarif;
+
+// COLORS VARIABLES
+
+$color-grey-light-1: #fffafb;
+$color-grey-light-2: #e1e2df;
+$color-grey-light-3: #c9cfcf;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem =10px
+}
+body {
+  font-family: $font-primary;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 10vh 80vh 10vh;
+}

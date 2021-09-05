@@ -1,0 +1,26 @@
+{
+  "name": "exam",
+  "version": "1.0.0",
+  "description": "Exam for interview",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": " node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "Oleg",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^6.2.1",
+    "create-react-app": "^4.0.3",
+    "csv-parser": "^3.0.0",
+    "express": "^4.17.1",
+    "json2csv": "^5.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

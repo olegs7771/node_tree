@@ -1,0 +1,27 @@
+.header {
+  background-color: $color-grey-light-2;
+  grid-row: 1;
+
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto;
+
+    width: 90%;
+    height: 100%;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    &__box {
+      background-color: $color-grey-light-1;
+      padding: 1rem 2rem;
+      border-radius: 3px;
+
+      &--text {
+        font-size: 2rem;
+      }
+    }
+  }
+}
