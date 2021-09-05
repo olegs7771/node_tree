@@ -4,7 +4,7 @@ import Footer from '../footer/Footer';
 
 const Main = () => {
   return (
-    <div className="container">
+    <div className="container_custom">
       <Header />
       <NodeTree />
       <Footer />

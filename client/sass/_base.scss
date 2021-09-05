@@ -25,7 +25,7 @@ body {
   line-height: 1.6;
 }
 
-.container {
+.container_custom {
   display: grid;
-  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-rows: 10vh min-content 10vh;
 }

@@ -55,17 +55,12 @@ const updateNodeById = (req, res, next) => {
 
   // Check if Node Object read_only true
   const nodeObject = results.filter((node) => node.id === req.body.id);
-  console.log('nodeObject', nodeObject);
 
   if (nodeObject[0].read_only === '0') {
     res.status(400).json({ error: 'Cannot update this Node' });
   } else {
     results[objIndex] = { ...results[objIndex], name: req.body.name };
-    console.log('results after update', results);
-    // const csv = JSONtoCSV(nodes);
 
-    // writeToFile('./tree_data_1.csv', csv);
-    // createCSV(nodes);
     res.json({ message: 'success', results });
   }
 };
