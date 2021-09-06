@@ -12,7 +12,7 @@ const NodeTree = () => {
   // Function fetches all nodes
   const getNodes = async () => {
     try {
-      const { data } = await axios.get('/api/v1/nodes/node_tree');
+      const { data } = await axios.get('/node_tree');
       console.log('data', data);
       setNodes(data);
     } catch (error) {

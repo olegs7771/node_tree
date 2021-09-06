@@ -25,7 +25,7 @@ const NodeTableRows = ({ node, reloadNodes, sentError }) => {
     };
     console.log('data', data);
     try {
-      await axios.put('/api/v1/nodes/node_tree', data);
+      await axios.put('/node_tree', data);
       reloadNodes();
       setEdit(false);
     } catch (error) {

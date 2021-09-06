@@ -15,9 +15,7 @@ const getNodeTree = () => {
     })
     .on('end', () => {
       results.push(0);
-      console.log('All the data in the file has been read');
     });
-
   return results;
 };
 getNodeTree();
