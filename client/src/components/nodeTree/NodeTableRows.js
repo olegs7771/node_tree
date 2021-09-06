@@ -25,10 +25,7 @@ const NodeTableRows = ({ node, reloadNodes, sentError }) => {
     };
     console.log('data', data);
     try {
-      await axios.put(
-        'https://arcane-savannah-80873.herokuapp.com/api/v1/nodes/node_tree',
-        data
-      );
+      await axios.put('/api/v1/nodes/node_tree', data);
       reloadNodes();
       setEdit(false);
     } catch (error) {

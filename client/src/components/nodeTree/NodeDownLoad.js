@@ -3,9 +3,7 @@ import axios from 'axios';
 const NodeDownLoad = () => {
   const _download = async () => {
     try {
-      const { data } = await axios.get(
-        'https://arcane-savannah-80873.herokuapp.com/api/v1/nodes/node_tree_csv'
-      );
+      const { data } = await axios.get('/api/v1/nodes/node_tree_csv');
 
       const blob = new Blob([data], { type: 'text/csv' });
       const url = window.URL.createObjectURL(blob);
