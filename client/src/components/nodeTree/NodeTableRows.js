@@ -11,7 +11,6 @@ const NodeTableRows = ({ node, reloadNodes, sentError }) => {
       await axios.delete('/node_tree', { data });
       sentError(null);
     } catch (error) {
-      console.log('error', error.response.data);
       sentError(error.response.data);
     }
   };
@@ -23,13 +22,12 @@ const NodeTableRows = ({ node, reloadNodes, sentError }) => {
       id,
       name,
     };
-    console.log('data', data);
+
     try {
       await axios.put('/node_tree', data);
       reloadNodes();
       setEdit(false);
     } catch (error) {
-      console.log('error', error.response.data);
       sentError(error.response.data);
     }
   };

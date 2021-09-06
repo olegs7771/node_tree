@@ -16,7 +16,11 @@ const NodeTree = () => {
 
       setNodes(data);
     } catch (error) {
-      console.log('errors', error.response.data);
+      if (error.response.data) {
+        setError(error.response.data);
+      } else {
+        return setError({ error: 'Cannot fetch data from server' });
+      }
     }
   };
 
@@ -32,7 +36,6 @@ const NodeTree = () => {
 
   //Set Error from child
   const _error = (error) => {
-    console.log('error in parent', error);
     setError(error);
   };
 
@@ -70,14 +73,20 @@ const NodeTree = () => {
                 </tr>
               </thead>
               <tbody>
-                {nodes.map((node, index) => (
-                  <NodeTableRows
-                    node={node}
-                    key={index}
-                    reloadNodes={_reloadNodes}
-                    sentError={_error}
-                  />
-                ))}
+                {nodes.length > 0 ? (
+                  nodes.map((node, index) => (
+                    <NodeTableRows
+                      node={node}
+                      key={index}
+                      reloadNodes={_reloadNodes}
+                      sentError={_error}
+                    />
+                  ))
+                ) : (
+                  <tr>
+                    <td>Can't load data</td>
+                  </tr>
+                )}
               </tbody>
             </table>
             <div className="nodetree__container__table__form">

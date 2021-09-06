@@ -17,14 +17,13 @@ const NodeTableForm = ({ reloadNodes, sentError }) => {
       parent,
       read_only,
     };
-    console.log('on submit data', data);
+
     try {
       const res = await axios.post('/node_tree', data);
       console.log('res.data', res.data);
       reloadNodes();
       sentError(null);
     } catch (error) {
-      console.log('errors', error.response.data);
       sentError(error.response.data);
     }
   };
