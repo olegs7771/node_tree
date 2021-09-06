@@ -13,10 +13,10 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 
-  app.get('*', (req, res) => {
-    res.setHeader('set-cookie', ['SameSite=Strict;SameSite=Strict']);
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
+  // app.get('*', (req, res) => {
+  //   res.setHeader('set-cookie', ['SameSite=Strict;SameSite=Strict']);
+  //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  // });
 }
 
 app.use('/', nodesTreeRouter);
