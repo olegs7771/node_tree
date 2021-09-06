@@ -16,6 +16,7 @@ const getNodeTree = () => {
     .on('end', () => {
       results.push(0);
     });
+
   return results;
 };
 getNodeTree();
@@ -41,7 +42,8 @@ const getRandomId = (min, max) => {
 //Get All Nodes Tree Route  🟧
 const getNodesTree = (req, res, next) => {
   // const nodes = getJSON_NodeTree();
-  res.json(results);
+  // res.json(results);
+  res.json({ message: 'Hello Oleg from server Heroku!' });
 };
 
 //Update Node by Id and respond with updated Node Tree / error if read_only ==='0' 🟧
