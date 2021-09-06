@@ -20,6 +20,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use('/api/v1/nodes', nodesTreeRouter);
+app.all('*', (req, res) => {
+  res.status(200).json({ message: 'no route found' });
+});
 
 const server = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
