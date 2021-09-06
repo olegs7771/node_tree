@@ -1,5 +1,4 @@
 import './App.scss';
-import react from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //Components
