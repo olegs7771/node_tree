@@ -1,4 +1,6 @@
 import NodeTableRows from './NodeTableRows';
+import NodeTableForm from './NodeTableForm';
+import NodeDownLoad from './NodeDownLoad';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
@@ -52,32 +54,39 @@ const NodeTree = () => {
               </div>
             )}
           </div>
-          <table className="table nodetree__container__table__body">
-            <thead>
-              <tr>
-                <th>id</th>
+          <div className="nodetree__container__table__block">
+            <table className="table nodetree__container__table__main">
+              <thead>
+                <tr>
+                  <th>id</th>
 
-                <th>
-                  <div className="nodetree__container__table__row">name</div>
-                </th>
+                  <th>
+                    <div className="nodetree__container__table__row">name</div>
+                  </th>
 
-                <th>description</th>
-                <th>parent</th>
-                <th>read_only</th>
-                <th>options</th>
-              </tr>
-            </thead>
-            <tbody>
-              {nodes.map((node, index) => (
-                <NodeTableRows
-                  node={node}
-                  key={index}
-                  reloadNodes={_reloadNodes}
-                  sentError={_error}
-                />
-              ))}
-            </tbody>
-          </table>
+                  <th>description</th>
+                  <th>parent</th>
+                  <th>read_only</th>
+                  <th>options</th>
+                </tr>
+              </thead>
+              <tbody>
+                {nodes.map((node, index) => (
+                  <NodeTableRows
+                    node={node}
+                    key={index}
+                    reloadNodes={_reloadNodes}
+                    sentError={_error}
+                  />
+                ))}
+              </tbody>
+            </table>
+            <div className="nodetree__container__table__form">
+              <NodeTableForm reloadNodes={_reloadNodes} sentError={_error} />
+              <br />
+              <NodeDownLoad />
+            </div>
+          </div>
         </div>
       </div>
     </div>

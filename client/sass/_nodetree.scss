@@ -1,7 +1,7 @@
 .nodetree {
   // height: 100vh;
   &__container {
-    border: 1px solid black;
+    // border: 1px solid black;
     margin: 0 auto;
     width: 90%;
     height: 100%;
@@ -21,7 +21,6 @@
       padding: 2rem;
       margin: 2rem 0rem;
       font-size: 1.5rem;
-      border: 1px solid $color-grey-light-2;
 
       &__row {
         max-width: 11.7rem;
@@ -49,6 +48,21 @@
             font-size: 2rem;
           }
         }
+      }
+      &__block {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid $color-grey-light-2;
+        padding: 2rem;
+      }
+
+      &__main {
+        border-right: 1px solid black;
+      }
+
+      &__form {
+        // border: 1px solid black;
+        padding: 0rem 1rem;
       }
     }
   }

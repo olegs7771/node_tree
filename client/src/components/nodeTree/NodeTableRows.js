@@ -9,6 +9,7 @@ const NodeTableRows = ({ node, reloadNodes, sentError }) => {
     console.log('data', data);
     try {
       await axios.delete('/api/v1/nodes/node_tree', { data });
+      sentError(null);
     } catch (error) {
       console.log('error', error.response.data);
       sentError(error.response.data);

@@ -93,7 +93,7 @@ const createNodeById = (req, res, next) => {
   const objIndex = results.findIndex((obj) => obj.id === req.body.id);
   console.log('objIndex', objIndex);
   if (objIndex === -1) {
-    res.status(400).json({ error: 'Cannot create Node' });
+    res.status(400).json({ error: 'Cannot create Node . Id not found.' });
   } else {
     //To do create new Node
     // 1)  Create Object
@@ -127,7 +127,16 @@ const getCSV = async (req, res, next) => {
     writeToFile('./tree_data_1.csv', csv);
 
     console.log('csv', csv);
-    res.json(csv);
+    const file = './tree_data_1.csv';
+    console.log('file', file);
+    fs.readFile(file, (err, content) => {
+      if (err) {
+        res.status(400).json({ error: 'No file' });
+      } else {
+        res.writeHead(200, { 'Content-type': 'text/csv' });
+        res.end(content);
+      }
+    });
   } catch (err) {
     console.error(err);
   }
