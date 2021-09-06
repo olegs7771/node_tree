@@ -12,7 +12,9 @@ const NodeTree = () => {
   // Function fetches all nodes
   const getNodes = async () => {
     try {
-      const { data } = await axios.get('/api/v1/nodes/node_tree');
+      const { data } = await axios.get(
+        'https://arcane-savannah-80873.herokuapp.com/api/v1/nodes/node_tree'
+      );
       console.log('data', data);
       setNodes(data);
     } catch (error) {
