@@ -125,16 +125,7 @@ const getCSV = async (req, res, next) => {
     writeToFile('./tree_data_1.csv', csv);
 
     console.log('csv', csv);
-    const file = './tree_data_1.csv';
-    console.log('file', file);
-    fs.readFile(file, (err, content) => {
-      if (err) {
-        res.status(400).json({ error: 'No file' });
-      } else {
-        res.writeHead(200, { 'Content-type': 'text/csv' });
-        res.end(content);
-      }
-    });
+    res.json(csv);
   } catch (err) {
     console.error(err);
   }

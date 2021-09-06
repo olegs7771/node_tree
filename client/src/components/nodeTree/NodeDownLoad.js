@@ -4,7 +4,7 @@ const NodeDownLoad = () => {
   const _download = async () => {
     try {
       const { data } = await axios.get('/node_tree_csv');
-
+      console.log('data for csv', data);
       const blob = new Blob([data], { type: 'text/csv' });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');

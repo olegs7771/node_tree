@@ -13,7 +13,7 @@ const NodeTree = () => {
   const getNodes = async () => {
     try {
       const { data } = await axios.get('/node_tree');
-      console.log('data', data);
+
       setNodes(data);
     } catch (error) {
       console.log('errors', error.response.data);
@@ -27,7 +27,6 @@ const NodeTree = () => {
 
   //Reload Nodes after editing in child NodeTableRows
   const _reloadNodes = () => {
-    console.log('reloaded');
     getNodes();
   };
 

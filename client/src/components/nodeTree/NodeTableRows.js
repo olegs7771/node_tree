@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 const NodeTableRows = ({ node, reloadNodes, sentError }) => {
@@ -8,7 +8,7 @@ const NodeTableRows = ({ node, reloadNodes, sentError }) => {
     console.log('id', id);
     console.log('data', data);
     try {
-      await axios.delete('/api/v1/nodes/node_tree', { data });
+      await axios.delete('/node_tree', { data });
       sentError(null);
     } catch (error) {
       console.log('error', error.response.data);
